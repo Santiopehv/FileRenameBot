@@ -36,7 +36,7 @@ from database.database import *
 from database.db import *
 
 
-@Mai_bOTs.on_message(pyrogram.filters.command(["help"]))
+@sctbots.on_message(pyrogram.filters.command(["help"]))
 async def help_user(bot, update):
     update_channel = Config.UPDATE_CHANNEL
     if update_channel:
@@ -74,7 +74,7 @@ async def help_user(bot, update):
         )
     )       
 
-@Mai_bOTs.on_message(pyrogram.filters.command(["start"]))
+@sctbots.on_message(pyrogram.filters.command(["start"]))
 async def start_me(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
         await update.reply_text("You are Banned")
@@ -115,7 +115,7 @@ async def start_me(bot, update):
     )
             return 
 
-@Mai_bOTs.on_callback_query()
+@sctbots.on_callback_query()
 async def cb_handler(client: Mai_bOTs , query: CallbackQuery):
     data = query.data
     if data == "rnme":
