@@ -59,7 +59,7 @@ async def set_caption(bot, update):
         await update.reply_text(f"**--Your Caption--:**\n\n{CSTM_FIL_CPTN}", quote=True)
 
 
-@Mai_bOTs.on_message(pyrogram.filters.command(["rename"]))
+@sctbots.on_message(pyrogram.filters.command(["rename"]))
 async def rename_doc(bot, update):
     update_channel = Config.UPDATE_CHANNEL
     if update_channel:
